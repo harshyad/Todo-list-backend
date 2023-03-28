@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const joi = require("joi")
 const TaskSchema = joi.object({
     id: joi.string().required(),
-    name: joi.string().required(),
+    name: joi.string().required().max(20),
     completed: joi.boolean().required()
 })
 const getTask = async (req, res) => {
